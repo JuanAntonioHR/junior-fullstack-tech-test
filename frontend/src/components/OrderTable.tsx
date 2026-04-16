@@ -36,7 +36,6 @@ export default function OrderTable({ orders, onMarkAsPaid }: Props) {
         {orders.map((order) => (
           <tr key={order.id}>
             <td>{order.id}</td>
-            {/* BUG: el cast (as string) silencia TypeScript, pero lanza un error en runtime si customerName es null */}
             <td>{(order.customerName as string).toUpperCase()}</td>
             <td>{statusLabel[order.status] ?? order.status}</td>
             <td>${order.amount.toFixed(2)}</td>

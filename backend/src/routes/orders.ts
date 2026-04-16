@@ -25,7 +25,6 @@ router.get('/:id', (req: Request, res: Response) => {
 });
 
 // PATCH /api/orders/:id/pay — marca un pedido como pagado
-// BUG: no verifica si el pedido ya está pagado o cancelado antes de actualizarlo
 router.patch('/:id/pay', (req: Request, res: Response) => {
   const order = orders.find((o) => o.id === req.params.id);
   if (!order) {
