@@ -45,8 +45,6 @@ export default function App() {
     }
   }
 
-  // BUG: la condición usa !== en lugar de ===, mostrando todos los pedidos
-  // excepto el estado seleccionado en vez de solo los del estado seleccionado
   const filteredOrders = selectedStatus
     ? orders.filter((o) => o.status !== selectedStatus)
     : orders;
